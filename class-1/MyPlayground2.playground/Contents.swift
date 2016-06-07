@@ -3,6 +3,7 @@
 import UIKit
 
 //Write a function that takes in a string, checks if it can be converted to a number and if possible, returns a number
+
 func takesString(name: String) -> Int?
 {
     let convertedNum = Int(name)
@@ -19,6 +20,12 @@ func takesTuple(course: Int, description: String) -> String
     return "Welcome to \(course): \(description)!"
 }
 print(takesTuple(401, description: "iOS"))
+
+func description(tuple: (code: Int, message: String)) -> String {
+    return "\(tuple.code) \(tuple.message)"
+}
+
+description((code: 404, message: "Not found"))
 
 
 //Write a function that take in a string, and returns a message: “String contains n characters”
@@ -65,5 +72,12 @@ print(reverseWord("This is backwards"))
 //let newName = sayHello()
 //newName = "Bob"
 
+func sayHello(newHello: String) -> String
+{
+    return "Hello, \(newHello), and welcome!"
+}
+
+var hi = sayHello
+hi("Jammers")
 
 
