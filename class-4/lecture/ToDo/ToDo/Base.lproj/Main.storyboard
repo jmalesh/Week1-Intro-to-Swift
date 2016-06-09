@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iHM-ar-aiS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iHM-ar-aiS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--ToDO-->
+        <!--ToDo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             <constraint firstItem="Fhf-DZ-92o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UBN-ST-P2P"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDO" id="KQk-SC-YVr">
+                    <navigationItem key="navigationItem" title="ToDo" id="KQk-SC-YVr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NQ5-Tc-yiZ">
                             <connections>
                                 <segue destination="aI0-VE-eMV" kind="show" identifier="NewItemViewController" id="qD5-c4-lzg"/>
@@ -104,7 +104,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBV-02-5tP">
-                                <rect key="frame" x="20" y="138" width="560" height="30"/>
+                                <rect key="frame" x="20" y="162" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,19 +113,25 @@
                                     <action selector="saveButtonSelected:" destination="aI0-VE-eMV" eventType="touchUpInside" id="ix8-As-CpF"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please enter to-do title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U95-44-BdH">
+                                <rect key="frame" x="20" y="122" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xKS-5v-BDy" secondAttribute="trailing" constant="20" id="G2Z-tt-835"/>
                             <constraint firstItem="xKS-5v-BDy" firstAttribute="leading" secondItem="EpZ-GF-0zD" secondAttribute="leading" constant="20" id="I0c-o5-cG4"/>
-                            <constraint firstItem="cBV-02-5tP" firstAttribute="top" secondItem="xKS-5v-BDy" secondAttribute="bottom" constant="24" id="XxV-Qk-hFq"/>
+                            <constraint firstItem="cBV-02-5tP" firstAttribute="top" secondItem="xKS-5v-BDy" secondAttribute="bottom" constant="48" id="XxV-Qk-hFq"/>
                             <constraint firstAttribute="trailing" secondItem="cBV-02-5tP" secondAttribute="trailing" constant="20" id="dDv-ZM-htv"/>
                             <constraint firstItem="xKS-5v-BDy" firstAttribute="top" secondItem="esi-wU-yAS" secondAttribute="bottom" constant="20" id="jaO-eQ-amg"/>
                             <constraint firstItem="cBV-02-5tP" firstAttribute="leading" secondItem="EpZ-GF-0zD" secondAttribute="leading" constant="20" id="t7X-um-nYZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="todoTextField" destination="xKS-5v-BDy" id="unf-fg-Fgq"/>
+                        <outlet property="newDescription" destination="U95-44-BdH" id="7or-L1-Xv9"/>
+                        <outlet property="newTask" destination="xKS-5v-BDy" id="IF6-S0-rDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRC-zb-M7O" userLabel="First Responder" sceneMemberID="firstResponder"/>

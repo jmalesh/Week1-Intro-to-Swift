@@ -10,7 +10,8 @@ import UIKit
 
 class NewItemViewController: UIViewController
 {
-    @IBOutlet weak var todoTextField: UITextField!
+    @IBOutlet weak var newTask: UITextField!
+    @IBOutlet weak var newDescription: UITextField!
     
     class func identifier() -> String
     {
@@ -31,9 +32,15 @@ class NewItemViewController: UIViewController
     @IBAction func saveButtonSelected(sender: AnyObject)
     {
         guard let navigationController = self.navigationController else { fatalError("Where did Navigation Controller go? Error origin: \(#function)") }
-        guard let description = self.todoTextField.text else { return }
+        //guard let description = self.todoTextField.text else { return }
         
-        // Missing model.
+        if let newTask = self.newTask.text, newDescription = self.newDescription.text {
+            let listItemsId = ToDo(newTask: newTask, newDescription: newDescription)
+            Store.shared.add(listItemsId)
+            
+        }
+        
+        
         
         navigationController.popViewControllerAnimated(true)
     }

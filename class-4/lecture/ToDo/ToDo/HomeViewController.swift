@@ -34,8 +34,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath)
         
-        // Missing model.
-        // Missing setup.
+        let listItemsId = Store.shared.allObjects()[indexPath.row]
+        cell.textLabel?.text = listItemsId.taskDescription()
         
         return cell
     }
@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 0
+        return Store.shared.count()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -63,7 +63,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         if editingStyle == .Delete {
             
-            // Missing model.
+            let listItemsId = Store.shared.allObjects()[indexPath.row]
+            Store.shared.remove(listItemsId)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
